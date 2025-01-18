@@ -10,14 +10,8 @@ public class Login {
         // Set the path to the ChromeDriver executable
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
-    ChromeOptions options = new ChromeOptions();
-options.addArguments("--headless");
-options.addArguments("--no-sandbox");
-options.addArguments("--disable-dev-shm-usage");  // For large environments
-options.addArguments("--remote-debugging-port=9222");  // To debug if needed
-
-WebDriver driver = new ChromeDriver(options);
-
+   
+ WebDriver driver = new ChromeDriver();
         
             // Navigate to the login page
             driver.get("https://www.naukri.com/nlogin/login?utm_source=google&utm_medium=cpc&utm_campaign=Brand_Login_Register&gad_source=1&gclid=Cj0KCQiAv628BhC2ARIsAIJIiK-gbJ6OBjtci_xwXy7GkpCnIuy8FYIpVJD55_0EJ2jiD8dXO0fQwP8aAoSHEALw_wcB&gclsrc=aw.ds");
