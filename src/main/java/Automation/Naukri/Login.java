@@ -10,8 +10,13 @@ public class Login {
         // Set the path to the ChromeDriver executable
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 
-        // Initialize the WebDriver (Chrome browser)
-        WebDriver driver = new ChromeDriver();
+    ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless");
+options.addArguments("--no-sandbox");
+options.addArguments("--disable-dev-shm-usage");  // For large environments
+options.addArguments("--remote-debugging-port=9222");  // To debug if needed
+
+WebDriver driver = new ChromeDriver(options);
 
         
             // Navigate to the login page
