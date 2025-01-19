@@ -34,7 +34,7 @@ WebDriver driver = new ChromeDriver(options);
 
 
         
-                        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+                        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
             WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
             usernameField.sendKeys("kshitijsalunkhe@gmail.com");
 
