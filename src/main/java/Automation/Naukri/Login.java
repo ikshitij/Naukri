@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import org.openqa.selenium.JavascriptExecutor;
 
 
 public class Login {
@@ -21,7 +22,14 @@ WebDriver driver = new ChromeDriver(options);
         
             // Navigate to the login page
             driver.get("https://www.naukri.com/nlogin/login?utm_source=google&utm_medium=cpc&utm_campaign=Brand_Login_Register&gad_source=1&gclid=Cj0KCQiAv628BhC2ARIsAIJIiK-gbJ6OBjtci_xwXy7GkpCnIuy8FYIpVJD55_0EJ2jiD8dXO0fQwP8aAoSHEALw_wcB&gclsrc=aw.ds");
+ JavascriptExecutor js = (JavascriptExecutor) driver;
+            if (js.executeScript("return document.readyState").equals("complete")) {
+                System.out.println("Page loaded completely!");
+            }
 
+
+
+        
                         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("usernameField")));
             usernameField.sendKeys("kshitijsalunkhe@gmail.com");
