@@ -19,7 +19,7 @@ public class Login {
  ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--headless");  // Run Chrome in headless mode
+       // options.addArguments("--headless");  // Run Chrome in headless mode
         options.addArguments("--remote-debugging-port=9222");  // Optional: for debugging
         options.addArguments("--display=:99"); 
 WebDriver driver = new ChromeDriver(options);
